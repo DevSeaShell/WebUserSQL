@@ -14,9 +14,9 @@ if ($conn->connect_error)
 }
 echo "Connected!";
 
-$mail = $conn->real_escape_string($_POST['$regmail']);
-$username = $conn->real_escape_string($_POST['$regusername']);
-$password = $conn->real_escape_string($_POST['$regpassword']);
+$mail = $conn->real_escape_string($_POST['regmail']);
+$username = $conn->real_escape_string($_POST['regusername']);
+$password = $conn->real_escape_string($_POST['regpassword']);
 
 $sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password');";
 
