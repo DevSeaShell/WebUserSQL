@@ -4,7 +4,7 @@ $dbUsername = "root";
 $dbPassword = "My1BirbSQL";
 $dbName = "UserDatabase";
 
-$conn = new mysqli($servername, $username, $passworde, $database);
+$conn = new mysqli($servername, $username, $password, $database);
 
 
 
@@ -16,9 +16,9 @@ echo "Connected!";
 
 $mail = $conn->real_escape_string($_POST['$regmail']);
 $username = $conn->real_escape_string($_POST['$regusername']);
-$passworde = $conn->real_escape_string($_POST['$regpassword']);
+$password = $conn->real_escape_string($_POST['$regpassword']);
 
-$sql = "INSERT INTO users (mail, username, passworde) VALUES ('$mail', '$username', '$passworde');";
+$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password');";
 
 if ($conn->query($sql) === TRUE){
 	echo "Inserted!";
