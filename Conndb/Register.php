@@ -13,19 +13,24 @@ if ($conn->connect_error)
 	die("Connection failed: " . $conn->connect_error);
 }
 
-echo "EYYY"
+$regusername = $_POST['username'];
+$regmail = $_POST['mail'];
+$regpassword = $_POST['password'];
 
-$sql = mysqli_query("SELECT FROM users (username, passworde, mail) WHERE username = '$RegUsername'");
-	if (mysqli_num_rows($sql)>=1){
+$sql = "SELECT * FROM users WHERE username = '$regusername'";
+	if (mysqli_num_rows($result) >=1) {
 		echo "Name already exists";
 	} else {
 		// Insert cuery here
-		$sql = "INSERT INTO users (username, passworde, mail) VALUES ('$RegUsername','$RegPassord','$RegEmail');";
+		$sql = "INSERT INTO users (username, passworde, mail) VALUES ('$regusername','$regpassord','$regemail')";
+	
+		if (!mysqli_query($conn,$sql))
+		{
+			die('Error: ' . mysqli_error($conn));
+		}
 	}
 
-if (!mysqli_query($conn,$sql))
-	{
-	die('Error: ' . mysqli_error($conn));
-	}
 mysqli_close($conn);
+
+echo "EYYY"
 ?>
