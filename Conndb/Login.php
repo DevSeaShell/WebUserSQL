@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+
+?>
+
 <h1>Login</h1>
 <br>
 <form id = "LoForm" method = "post" action = "Conndb/connection.php">
