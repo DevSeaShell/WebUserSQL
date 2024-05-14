@@ -12,20 +12,22 @@ if ($conn->connect_error)
 {
 	die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected";
+echo "Connected successfully";
 
-$mail = $conn->real_escape_string($_POST['regemail']);
-$username = $conn->real_escape_string($_POST['regusername']);
-$password = $conn->real_escape_string($_POST['regpassword']);
+$mail = $conn->real_escape_string($_POST['mailInput']);
+$username = $conn->real_escape_string($_POST['usernameInput']);
+$password = $conn->real_escape_string($_POST['passwordInput']);
 
-$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password');";
+$sql = "INSERT INTO User (mail, username, password) VALUES ('$mail', '$username', '$password');";
 
 if ($conn->query($sql) === TRUE){
-	echo "Inserted";
+	echo "yay it inserted";
 } else {
 	echo "error:" . $sql. "<br>" .$conn->error;
 }
 
-echo "EYY";
+echo "test";
 $conn->close();
+
+
 ?>
