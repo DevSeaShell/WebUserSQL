@@ -1,36 +1,31 @@
-
 <?php
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "My1BirbSQL";
 $dbName = "UserDatabase";
 
-$conn = mysqli_connect( $dbServername , $dbUsername , $dbPassword , $dbName );
+$conn = new mysqli($servername, $username, $password, $database);
 
-// Checking for connection errors
+
+
 if ($conn->connect_error)
 {
 	die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected!";
+echo "Connected successfully";
 
-$regusername = ($_POST['username']);
-$regmail = ($_POST['mail']);
-$regpassword = ($_POST['passworde']);
+$mail = $conn->real_escape_string($_POST['$regmail']);
+$username = $conn->real_escape_string($_POST['$regusername']);
+$password = $conn->real_escape_string($_POST['$regpassword']);
 
-$sql = "SELECT * FROM users WHERE username = '$regusername'";
-	if (mysqli_num_rows($result) >=1) {
-		echo "Name already exists";
-	} else {
-		// Insert cuery here
-		$sql = "INSERT INTO users (username, passworde, mail) VALUES ('$username','$password','$mail');";
-	
-		if (!mysqli_query($conn,$sql))
-		{
-			die('Error: ' . mysqli_error($conn));
-		}
-	}
+$sql = "INSERT INTO User (mail, username, passworde) VALUES ('$mail', '$username', '$password');";
 
-echo "EYYY"
+if ($conn->query($sql) === TRUE){
+	echo "yay it inserted";
+} else {
+	echo "error:" . $sql. "<br>" .$conn->error;
+}
+
+echo "test";
 $conn->close();
 ?>
