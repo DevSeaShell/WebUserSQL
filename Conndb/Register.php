@@ -17,9 +17,6 @@
     <input type="password" name="RegPassord" required>
     <button type="submit">Register</button>
 </form>
-</body>
-</html>
-
 
 <?php
 $sql = mysqli_query("SELECT FROM users (username, passworde, mail) WHERE username = '$RegUsername'");
@@ -36,3 +33,6 @@ if (!mysqli_query($conn,$sql))
 	}
 mysqli_close($conn);
 ?>
+
+</body>
+</html>
