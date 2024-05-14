@@ -18,7 +18,7 @@ $mail = $conn->real_escape_string($_POST['$regmail']);
 $username = $conn->real_escape_string($_POST['$regusername']);
 $passworde = $conn->real_escape_string($_POST['$regpassword']);
 
-$sql = "INSERT INTO User (mail, username, passworde) VALUES ('$mail', '$username', '$passworde');";
+$sql = "INSERT INTO users (mail, username, passworde) VALUES ('$mail', '$username', '$passworde');";
 
 if ($conn->query($sql) === TRUE){
 	echo "Inserted!";
