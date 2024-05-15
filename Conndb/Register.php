@@ -20,7 +20,7 @@ $username = $conn->real_escape_string($_POST['regusername']);
 $password = $conn->real_escape_string($_POST['regpassword']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
-$conn->query($result)
+$conn->query($result) // something like this but it is not set up the right way rn.
 	// Checking if it already exists on the database
 	// result is greater than or equal to 1
 	// ($result) typically holds the result set returned by a SELECT query 
