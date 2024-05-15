@@ -30,6 +30,7 @@ if (mysqli_num_rows($result) >=1) {
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
 	// to check if a SQL query executed successfully
 	// to execute a SQL query on the database
+	// query is a request for data or information from a database
 	if ($conn->query($sql) === TRUE) {
 		echo "Inserted";
 	} else {
