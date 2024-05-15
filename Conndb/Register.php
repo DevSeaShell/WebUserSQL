@@ -2,9 +2,9 @@
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "My1BirbSQL";
-$dbName = "UserDatabase";
+$dbDatabase = "UserDatabase";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($dbServername, $dbUsername, $dbPassword, $dbDatabase);
 
 // Checking for connection errors
 if ($conn->connect_error)
