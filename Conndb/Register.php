@@ -14,6 +14,7 @@ if ($conn->connect_error)
 }
 echo "Connected!";
 
+// ($conn->real_escape_string) used in PHP to escape special characters in the input
 $mail = $conn->real_escape_string($_POST['regemail']);
 $username = $conn->real_escape_string($_POST['regusername']);
 $password = $conn->real_escape_string($_POST['regpassword']);
@@ -28,8 +29,8 @@ if (mysqli_num_rows($result) >=1) {
 } else {
 	// Insert new record if username doesn't exist
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
-	// to check if a SQL query executed successfully
-	// to execute a SQL query on the database
+	// to check if a SQL query executed successfully and executes the SQL query on the database
+	// query is a request for data or information from a database
 	if ($conn->query($sql) === TRUE) {
 		echo "Inserted";
 	} else {
