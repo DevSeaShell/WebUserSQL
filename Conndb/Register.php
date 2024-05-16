@@ -15,21 +15,28 @@ if ($conn->connect_error)
 echo "Connected!";
 
 // ($conn->real_escape_string) used in PHP to escape special characters in the input
-$mail = $conn->real_escape_string($_POST['regemail']);
+$mail = $conn->real_escape_string($_POST['regmail']);
 $username = $conn->real_escape_string($_POST['regusername']);
 $password = $conn->real_escape_string($_POST['regpassword']);
 
-$sql = "SELECT * FROM users WHERE username = '$username'";
+$sql_u = "SELECT * FROM users WHERE username = '$username'";
+$sql_m = "SELECT * FROM users WHERE mail = '$mail'";
 
-$result = $conn -> query($sql);
+// Checks if it gets results from the database if it exists or not
+$result_u = $conn -> query($sql_u);
+echo "Got username Result!"
+$result_m = $conn -> query($sql_m);
+echo "Got mail Result!"
 
-	// Checking if it already exists on the database
-	// result is greater than or equal to 1
-	// ($result) typically holds the result set returned by a SELECT query 
-if (mysqli_num_rows($result) >=1) {
-	echo "Name already exists";
+if (mysqli_num_rows($result_u) >= 1){
+
+	echo "Username taken"
+
+} else if (mysqli_num_rows($result_m) >= 1){
+
+	echo "Mail already in use"
 } else {
-	// Insert new record if username doesn't exist
+	// Insert new record if username doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
 	// to check if a SQL query executed successfully and executes the SQL query on the database
 	// query is a request for data or information from a database
