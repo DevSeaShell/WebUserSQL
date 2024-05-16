@@ -19,16 +19,13 @@ $mail = $conn->real_escape_string($_POST['regmail']);
 $username = $conn->real_escape_string($_POST['regusername']);
 $password = $conn->real_escape_string($_POST['regpassword']);
 
-$sql_u = "SELECT * FROM users WHERE username = '$username'";
-$sql_m = "SELECT * FROM users WHERE mail = '$mail'";
+$sql = "SELECT * FROM users WHERE username = '$username'";
 
-// Checks if it gets results from the database if it exists or not
-$result_u = $conn -> query($sql_u);
-echo "Got username Result!"
-$result_m = $conn -> query($sql_m);
-echo "Got mail Result!"
+$result = $conn -> query($sql);
 
-
+	// Checking if it already exists on the database
+	// result is greater than or equal to 1
+	// ($result) typically holds the result set returned by a SELECT query 
 if (mysqli_num_rows($result) >=1) {
 	echo "Name already exists";
 } else {
