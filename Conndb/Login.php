@@ -17,16 +17,15 @@ $mail = $conn->real_escape_string($_POST['logmail']);
 $username = $conn->real_escape_string($_POST['logusername']);
 $password = $conn->real_escape_string($_POST['logpassword']);
 
-// Checks if username, mail and password that was written in input exists in the database.
+// Checks if username that was written in input exists in the database.
 $sql_u = "SELECT * FROM users WHERE username = '$username'";
-$sql_m = "SELECT * FROM users WHERE mail = '$mail'";
-$sql_p = "SELECT * FROM users WHERE password = '$password'";
 $result_u = $conn -> query($sql_u);
-$result_m = $conn -> query($sql_m);
-$result_p = $conn -> query($sql_p);
 
-
-
+if mysqli_num_rows($result_u) === 0{
+	echo "user dose not exist";
+} else if{
+	
+}
 
 echo "EYYY"
 ?>
