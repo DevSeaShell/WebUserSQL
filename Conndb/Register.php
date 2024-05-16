@@ -26,8 +26,13 @@ $sql_m = "SELECT * FROM users WHERE mail = '$mail'";
 $result_u = $conn -> query($sql_u);
 $result_m = $conn -> query($sql_m);
 
-if (mysqli_num_rows($result_u) >=1) {
-	echo "Name already exists";
+if (mysqli_num_rows($result_u) >= 1){
+
+	echo "Username taken";
+
+} else if (mysqli_num_rows($result_m) >= 1){
+
+	echo "Mail already in use";
 } else {
 	// Insert new record if username doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
