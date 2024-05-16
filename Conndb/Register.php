@@ -21,6 +21,7 @@ $password = $conn->real_escape_string($_POST['regpassword']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
 
+$result = $conn -> query($sql);
 
 	// Checking if it already exists on the database
 	// result is greater than or equal to 1
