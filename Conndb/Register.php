@@ -51,12 +51,4 @@ if (mysqli_num_rows($result_u) >= 1){
 $conn->close();
 // prints out EYYY
 echo "EYYY"
-
-ob_start();
-
-// your PHP / HTML code here
-echo "HEYYYY";
-
-
-file_put_contents('Register.html', ob_get_clean());
 ?>
