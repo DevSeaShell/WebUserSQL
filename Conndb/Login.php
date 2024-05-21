@@ -3,7 +3,7 @@
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "My1BirbSQL";
-$dbName = "UserDatabase";
+$dbDatabase = "UserDatabase";
 
 $conn = new mysqli($dbServername, $dbUsername, $dbPassword, $dbDatabase);
 
