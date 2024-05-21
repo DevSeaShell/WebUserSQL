@@ -23,6 +23,8 @@ $sql_p = "SELECT * FROM users WHERE password = '$password'";
 $result_u = $conn -> query($sql_u);
 $result_p = $conn -> query($sql_p);
 
+echo "Database Result";
+
 if mysqli_num_rows($result_u) === 0{
 	echo "user dose not exist";
 } else if mysql_num_rows($result_p) === 0{
@@ -32,5 +34,5 @@ if mysqli_num_rows($result_u) === 0{
 	$result_IdPas = $conn -> queiy($sql);
 }
 
-echo "EYYY"
+echo "EYYY";
 ?>
