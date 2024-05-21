@@ -27,8 +27,6 @@ echo "Database Result";
 
 if mysqli_num_rows($result_u) === 0{
 	echo "user dose not exist";
-} else if mysql_num_rows($result_p) === 0{
-	echo "Wrong Password";
 } else if {
 	$sql = "SELECT id, password FROM users WHERE username = '$username'";
 	$result_IdPas = $conn -> queiy($sql);
