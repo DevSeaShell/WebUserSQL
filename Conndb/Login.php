@@ -19,12 +19,17 @@ $password = $conn->real_escape_string($_POST['logpassword']);
 
 // Checks if username that was written in input exists in the database.
 $sql_u = "SELECT * FROM users WHERE username = '$username'";
+$sql_p = "SELECT * FROM users WHERE password = '$password'";
 $result_u = $conn -> query($sql_u);
+$result_p = $conn -> query($sql_p);
 
 if mysqli_num_rows($result_u) === 0{
 	echo "user dose not exist";
-} else if{
-	
+} else if mysql_num_rows($result_p) === 0{
+	echo "Wrong Password";
+} else if {
+	$sql = "SELECT id, password FROM users WHERE username = '$username'";
+	$result_IdPas = $conn -> queiy($sql);
 }
 
 echo "EYYY"
