@@ -27,14 +27,25 @@ echo "Database Result";
 
 if (mysqli_num_rows($result_u) === 0){
 	echo "user dose not exist";
-} else {
+} else { // Under this comment - Something that isnt right or just not working
 	($stmt = $conn -> prepare ("SELECT id, mail, password FROM users WHERE username = '$username'")){
 		$stmt -> bind_param("s", $username);
 		$stmt -> execute();
 		$stmt -> store_result();
 		$stmt -> bind_result($id, $mail, $password);
-		
+
 		echo "Bind Result Check!";
+
+		if ($stmt -> fetch()){
+			echo "Got user INFO!!";
+
+			if ($_POST['password'] === $password){
+				echo "Correct password!";
+			}
+			if ($_POST['mail'] === $mail){
+				echo "Matching mail!";
+			}
+		}
 	}
 
 	
