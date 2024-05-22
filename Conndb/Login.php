@@ -25,7 +25,7 @@ $result_u = $conn -> query($sql_u);
 echo "Database Result";
 //Code above works fine ------------
 
-if mysqli_num_rows($result_u) === 0{
+if (mysqli_num_rows($result_u) === 0){
 	echo "user dose not exist";
 }
 
