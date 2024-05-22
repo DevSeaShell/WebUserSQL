@@ -23,7 +23,11 @@ $password = $conn->real_escape_string($_POST['logpassword']);
 $sql_u = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql_u);
 echo "Database Result";
+//Code above works fine ------------
 
+if mysqli_num_rows($result_u) === 0{
+	echo "user dose not exist";
+}
 
 echo "EYYY";
 ?>
