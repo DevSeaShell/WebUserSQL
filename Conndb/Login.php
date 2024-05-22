@@ -34,16 +34,7 @@ if (mysqli_num_rows($result_u) === 0){
 		$stmt -> store_result();
 		$stmt -> bind_result($id, $mail, $password);
 		
-		if ($stmt -> fetch()){
-			echo "Got user INFO!!";
-
-			if ($_POST['password'] === $password){
-				echo "Correct password!";
-			}
-			if ($_POST['mail'] === $mail){
-				echo "Matching mail!";
-			}
-		}
+		echo "Bind Result Check!";
 	}
 
 	
