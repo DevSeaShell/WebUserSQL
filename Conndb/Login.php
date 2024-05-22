@@ -32,10 +32,10 @@ if (mysqli_num_rows($result_u) === 0){
 		$stmt -> bind_param("s", $username);
 		$stmt -> execute();
 		$stmt -> store_result();
+
+		if ($stmt->num_rows > 0){
 		$stmt -> bind_result($id, $mail, $password);
-
-		echo "Bind Result Check!";
-
+			
 		if ($stmt -> fetch()){
 			echo "Got user INFO!!";
 
@@ -46,9 +46,11 @@ if (mysqli_num_rows($result_u) === 0){
 				echo "Matching mail!";
 			}
 		}
+
+		echo "Bind Result Check!";
+		}
 	}
 
-	
 }
 
 echo "EYYY";
