@@ -28,8 +28,7 @@ echo "Database Result";
 if (mysqli_num_rows($result_u) === 0){
 	echo "user dose not exist";
 } else {
-	$sql = "SELECT id, mail, password FROM users WHERE username = '$username'";
-	$stmt = $conn -> prepare($sql){
+	($stmt = $conn -> prepare ("SELECT id, mail, password FROM users WHERE username = '$username'")){
 		$stmt -> bind_param("s", $username);
 		$stmt -> execute();
 		$stmt -> store_result();
@@ -37,7 +36,7 @@ if (mysqli_num_rows($result_u) === 0){
 		
 		if ($stmt -> fetch()){
 			echo "Got user INFO!!";
-			
+
 			if ($_POST['password'] === $password){
 				echo "Correct password!";
 			}
