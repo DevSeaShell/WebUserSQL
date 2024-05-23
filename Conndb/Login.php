@@ -30,6 +30,10 @@ if (mysqli_num_rows($result) === 1){
 	echo "Checked result rows";
 	if ($row['username'] === $username && $row['password'] === $password && $row['mail'] === $mail) {
 		echo "Matched!";
+		$_SESSION['username'] = $row['username'];
+		$_SESSION['password'] = $row['password'];
+		$_SESSION['mail'] = $row['mail'];
+		
 } else if (mysqli_num_rows($result) === 0){
 	echo "User dose not exist";
 }
