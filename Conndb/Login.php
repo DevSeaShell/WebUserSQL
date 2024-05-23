@@ -39,10 +39,10 @@ if (mysqli_num_rows($result_u) === 0){
 		if ($stmt -> fetch()){
 			echo "Got user INFO!!";
 
-			if ($_POST['password'] === $password){
+			if ($_POST['logpassword'] === $password){
 				echo "Correct password!";
 			}
-			if ($_POST['mail'] === $mail){
+			if ($_POST['logmail'] === $mail){
 				echo "Matching mail!";
 			}
 		}
