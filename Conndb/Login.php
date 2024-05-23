@@ -33,22 +33,7 @@ if (mysqli_num_rows($result_u) === 0){
 		$stmt -> execute();
 		$stmt -> store_result();
 
-		if ($stmt->num_rows > 0){
-		$stmt -> bind_result($id, $mail, $password);
-			
-		if ($stmt -> fetch()){
-			echo "Got user INFO!!";
-
-			if ($_POST['logpassword'] === $password){
-				echo "Correct password!";
-			}
-			if ($_POST['logmail'] === $mail){
-				echo "Matching mail!";
-			}
-		}
-
-		echo "Bind Result Check!";
-		}
+		echo "Test Store_result gotten";
 	}
 
 }
