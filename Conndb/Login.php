@@ -25,7 +25,7 @@ $result = $conn -> query($sql);
 echo "Database Result";
 //Code above works fine ------------
 
-if (mysqli_num_rows($result) === 1){
+if (mysqli_num_rows($result) >= 1){
 	$row = mysqli_fetch_assoc($result);
 	echo "Checked result rows";
 	if ($row['username'] === $username && $row['password'] === $password && $row['mail'] === $mail) {
@@ -33,7 +33,8 @@ if (mysqli_num_rows($result) === 1){
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['password'] = $row['password'];
 		$_SESSION['mail'] = $row['mail'];
-		
+		$_SESSION['id'] = $row['id'];
+
 } else if (mysqli_num_rows($result) === 0){
 	echo "User dose not exist";
 }
