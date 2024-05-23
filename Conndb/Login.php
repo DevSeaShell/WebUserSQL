@@ -27,6 +27,7 @@ echo "Database Result";
 
 if (mysqli_num_rows($result) === 1){
 	$row = mysqli_fetch_assoc($result);
+	echo "Checked result rows";
 	if ($row['username'] === $username && $row['password'] === $password && $row['mail'] === $mail) {
 		echo "Matched!";
 } else if (mysqli_num_rows($result) === 0){
