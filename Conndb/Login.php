@@ -25,13 +25,13 @@ $result = $conn -> query($sql);
 echo "Database Result";
 //Code above works fine ------------
 
-if (mysqli_num_rows($result) === 0){
-	echo "user dose not exist";
-} else if (mysqli_num_rows($result) === 1){ 
+if (mysqli_num_rows($result) === 1){
 	$row = mysqli_fetch_assoc($result);
 	if ($row['username'] === $username && $row['password'] === $password && $row['mail'] === $mail) {
-		echo "Logged in!";
-	}
+		echo "Matched!";
+} else if (mysqli_num_rows($result) === 0){
+	echo "User dose not exist";
+}
 }
 
 echo "EYYY";
