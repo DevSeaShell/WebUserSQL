@@ -25,7 +25,7 @@ $result = $conn -> query($sql);
 echo "Database Result";
 //Code above works fine ------------
 
-echo $result;
+print "$result";
 
 if (mysqli_num_rows($result) >= 1){
 	$row = mysqli_fetch_assoc($result);
