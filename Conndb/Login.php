@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) >= 1){
 		$_SESSION['mail'] = $row['mail'];
 		$_SESSION['id'] = $row['id'];
 
-} else if (mysqli_num_rows($result) === 0){
+} else{
 	echo "User dose not exist";
 }
 }
