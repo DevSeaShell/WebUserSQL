@@ -35,7 +35,7 @@ if (mysqli_num_rows($result_u) >= 1){
 	echo "Mail already in use";
 } else {
 	// Inserts user info if username and mail doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
-	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
+	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '.md5($password).')";
 	// Checks if SQL query executed successfully and executes the SQL query on the database
 	// query is a request for data or information from a database
 	if ($conn->query($sql) === TRUE) {
