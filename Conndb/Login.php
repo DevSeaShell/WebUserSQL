@@ -20,15 +20,18 @@ $username = $conn->real_escape_string($_POST['logusername']);
 $password = $conn->real_escape_string($_POST['logpassword']);
 
 // Checks if username that was written in input exists in the database.
-$sql_u = "SELECT * FROM users WHERE username = '$username' AND '$password' AND '$mail'";
-$result_u = $conn -> query($sql_u);
+$sql = "SELECT * FROM users WHERE username = '$username' AND '$password' AND '$mail'";
+$result = $conn -> query($sql);
 echo "Database Result";
 //Code above works fine ------------
 
-if (mysqli_num_rows($result_u) === 0){
+if (mysqli_num_rows($result) === 0){
 	echo "user dose not exist";
-} else { // Under this comment - Something that isnt right or just not working
-	
+} else if (mysqli_num_rows($result) === 1){ 
+	$row = mysqli_fetch_assoc($result);
+	if ($row['username'] === $username && $row['password'] === $password && $row['mail'] === $mail) {
+		echo "Logged in!";
+	}
 }
 
 echo "EYYY";
