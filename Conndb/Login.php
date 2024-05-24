@@ -20,20 +20,25 @@ $username = $conn->real_escape_string($_POST['logusername']);
 $password = $conn->real_escape_string($_POST['logpassword']);
 
 // Checks if username that was written in input exists in the database.
-$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password' AND mail = '$mail'";
-$result = $conn -> query($sql);
+$sql_get = "SELECT * FROM users WHERE username = '$username' AND password = '$password' AND mail = '$mail'";
+$result = $conn -> query($sql_get);
 echo "Database Result";
 //Code above works fine ------------
 
-print "$result";
+$sql = "SELECT id, mail, password FROM users WHERE username = ?"
+$stmt = $conn -> Prepare($sql);
+$stmt = -> bind_param('s', $username);
+$stmt -> execute();
+$stmt -> store_result();
 
-if (mysqli_num_rows($result) >= 1){
-	$row = mysqli_fetch_assoc($result);
-	echo "Checked result rows";
+if ($stmt mysqli_num_rows >= 1){
+	$stmt -> bind_result($id, $mail, $password);
+	$stmt -> fetch();
+	echo "Checked result rows(Found row/rows)";
+
 	if ($row['username'] === $username && $row['password'] === $password && $row['mail'] === $mail) {
 		echo "Matched!";
 		$_SESSION['username'] = $row['username'];
-		$_SESSION['password'] = $row['password'];
 		$_SESSION['mail'] = $row['mail'];
 		$_SESSION['id'] = $row['id'];
 
