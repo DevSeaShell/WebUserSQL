@@ -34,7 +34,7 @@ echo "RESULTS!!";
 }
 
 // all above works --------
-if ($stmt num_rows = 1){
+if ($stmt -> num_rows = 1){
 	$stmt -> bind_result($id, $mail, $password);
 	$stmt -> fetch();
 	echo "Checked result rows(Found row/rows)";
