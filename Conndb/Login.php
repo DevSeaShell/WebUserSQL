@@ -34,12 +34,12 @@ echo "RESULTS!!";
 }
 
 // all above works --------
-if ($stmt -> num_rows = 1){
-	$stmt -> bind_result($id, $mail, $password);
+if ($stmt -> num_rows > 0){
+	$stmt -> bind_result($id_res, $mail_res, $password_res);
 	$stmt -> fetch();
 	echo "Checked result rows(Found row/rows)";
 
-	if (['username'] === $username && ['password'] === $password && ['mail'] === $mail) {
+	if ([$username] === $username_res && [$password] === $password_res && [$mail] === $mail_res) {
 		echo "Matched!";
 		$_SESSION['username'] = [$username];
 		$_SESSION['mail'] = [$mail];
