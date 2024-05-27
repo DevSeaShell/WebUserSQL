@@ -33,21 +33,22 @@ $stmt -> store_result();
 echo "RESULTS!!";
 }
 
-//if ($stmt num_rows = 1){
-	//$stmt -> bind_result($id, $mail, $password);
-	//$stmt -> fetch();
-	//echo "Checked result rows(Found row/rows)";
+// all above works --------
+if ($stmt num_rows = 1){
+	$stmt -> bind_result($id, $mail, $password);
+	$stmt -> fetch();
+	echo "Checked result rows(Found row/rows)";
 
-	//if (['username'] === $username && ['password'] === $password && ['mail'] === $mail) {
-		//echo "Matched!";
-		//$_SESSION['username'] = [$username];
-		//$_SESSION['mail'] = [$mail];
-		//$_SESSION['id'] = [$id];
+	if (['username'] === $username && ['password'] === $password && ['mail'] === $mail) {
+		echo "Matched!";
+		$_SESSION['username'] = [$username];
+		$_SESSION['mail'] = [$mail];
+		$_SESSION['id'] = [$id];
 
-//} else{
-	//echo "User dose not exist";
-//}
-//}
+} else{
+	echo "User dose not exist";
+}
+}
 
 echo "EYYY";
 ?>
