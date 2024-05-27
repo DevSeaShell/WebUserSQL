@@ -37,6 +37,10 @@ echo "RESULTS!!";
 if ($stmt -> num_rows > 0){
 	$stmt -> bind_result($id_res, $mail_res, $password_res);
 	$stmt -> fetch();
+
+	print_r($id_res);
+	print_r($mail_res);
+	print_r($password_res);
 	echo "Checked result rows(Found row/rows)";
 
 	if ([$username] === $username_res && [$password] === $password_res && [$mail] === $mail_res) {
@@ -45,9 +49,9 @@ if ($stmt -> num_rows > 0){
 		$_SESSION['mail'] = [$mail];
 		$_SESSION['id'] = [$id];
 
-} else{
+	} else{
 	echo "User dose not exist";
-}
+	}
 }
 
 echo "EYYY";
