@@ -31,21 +31,21 @@ $stmt = -> bind_param('s', $username);
 $stmt -> execute();
 $stmt -> store_result();
 
-if ($stmt num_rows >= 1){
-	$stmt -> bind_result($id, $mail, $password);
-	$stmt -> fetch();
-	echo "Checked result rows(Found row/rows)";
+//if ($stmt num_rows = 1){
+	//$stmt -> bind_result($id, $mail, $password);
+	//$stmt -> fetch();
+	//echo "Checked result rows(Found row/rows)";
 
-	if ($row['username'] === $username && $row['password'] === $password && $row['mail'] === $mail) {
-		echo "Matched!";
-		$_SESSION['username'] = $row['username'];
-		$_SESSION['mail'] = $row['mail'];
-		$_SESSION['id'] = $row['id'];
+	//if (['username'] === $username && ['password'] === $password && ['mail'] === $mail) {
+		//echo "Matched!";
+		//$_SESSION['username'] = [$username];
+		//$_SESSION['mail'] = [$mail];
+		//$_SESSION['id'] = [$id];
 
-} else{
-	echo "User dose not exist";
-}
-}
+//} else{
+	//echo "User dose not exist";
+//}
+//}
 
 echo "EYYY";
 ?>
