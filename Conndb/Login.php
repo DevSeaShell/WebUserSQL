@@ -31,7 +31,7 @@ $stmt = -> bind_param('s', $username);
 $stmt -> execute();
 $stmt -> store_result();
 
-if ($stmt mysqli_num_rows >= 1){
+if ($stmt num_rows >= 1){
 	$stmt -> bind_result($id, $mail, $password);
 	$stmt -> fetch();
 	echo "Checked result rows(Found row/rows)";
