@@ -27,7 +27,7 @@ echo "Database Result";
 
 $sql = "SELECT id, mail, password FROM users WHERE username = ?"
 $stmt = $conn -> Prepare($sql);
-$stmt = -> bind_param('s', $username);
+$stmt -> bind_param('s', $username);
 $stmt -> execute();
 $stmt -> store_result();
 
