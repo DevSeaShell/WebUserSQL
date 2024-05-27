@@ -49,9 +49,9 @@ if ($stmt -> num_rows > 0){
 		$_SESSION['mail'] = [$mail];
 		$_SESSION['id'] = [$id];
 
-	} else{
-	echo "User dose not exist";
 	}
+} else{
+	echo "User dose not exist";
 }
 
 echo "EYYY";
