@@ -14,13 +14,13 @@ if ($conn->connect_error)
 }
 echo "Connected!";
 
-// Saves input from logmain. Handles symbles as text(Protection from some attempted attacks) ($conn->real_escape_string)
+// Saves input from logmain. Handles symbles as text(Protection from attacks) ($conn->real_escape_string)
 $mail = $conn->real_escape_string($_POST['logmail']);
 $username = $conn->real_escape_string($_POST['logusername']);
-$password = ($_POST['logpassword']);
+$password = $conn->real_escape_string($_POST['logpassword']);
 
 print_r($mail);
-print_r('logpassword');
+print_r($_POST['logpassword']);
 // Checks if input exists in the database.
 $sql_get = "SELECT * FROM users WHERE username = '$username'";
 $result = $conn -> query($sql_get);
