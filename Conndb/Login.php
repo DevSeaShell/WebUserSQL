@@ -20,7 +20,7 @@ $username = $conn->real_escape_string($_POST['logusername']);
 $password = $conn->real_escape_string($_POST['logpassword']);
 
 print_r($mail);
-print_r($_POST['logpassword']);
+print_r($password);
 // Checks if input exists in the database.
 $sql_get = "SELECT * FROM users WHERE username = '$username'";
 $result = $conn -> query($sql_get);
