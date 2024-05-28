@@ -40,6 +40,7 @@ if (mysqli_num_rows($result_u) >= 1){
 	// query is a request for data or information from a database
 	if ($conn->query($sql) === TRUE) {
 		echo "Inserted";
+		header('Location: /Login.html');
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
