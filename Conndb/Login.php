@@ -42,6 +42,9 @@ if ($stmt -> num_rows > 0){
 	print_r($id_res);
 	print_r($mail_res);
 	print_r($password_res);
+	
+	print_r($mail);
+	print_r($password);
 
 	if ($password === $password_res && $mail === $mail_res) {
 		echo "Matched!";
