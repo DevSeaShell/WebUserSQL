@@ -43,7 +43,7 @@ if ($stmt -> num_rows > 0){
 	print_r($password_res);
 	echo "Checked result rows(Found row/rows)";
 
-	if ($username_res === $username && $password_res === $password && $mail_res === $mail) {
+	if ($password_res === $password && $mail_res === $mail) {
 		echo "Matched!";
 		$_SESSION['username'] = [$username];
 		$_SESSION['mail'] = [$mail];
