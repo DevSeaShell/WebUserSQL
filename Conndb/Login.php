@@ -14,10 +14,10 @@ if ($conn->connect_error)
 }
 echo "Connected!";
 
-// Saves input from logmain. there are no weird symbols with the ($conn->real_escape_string)
+// Saves input from logmain. Handles symbles as text(Protection from some attempted attacks) ($conn->real_escape_string)
 $mail = $conn->real_escape_string($_POST['logmail']);
 $username = $conn->real_escape_string($_POST['logusername']);
-$password = $conn->real_escape_string($_POST['logpassword']);
+$password = ($_POST['logpassword']);
 
 print_r($mail);
 print_r('logpassword');
