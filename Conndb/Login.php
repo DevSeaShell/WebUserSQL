@@ -37,11 +37,11 @@ echo "RESULTS!!";
 if ($stmt -> num_rows > 0){
 	$stmt -> bind_result($id_res, $mail_res, $password_res);
 	$stmt -> fetch();
-
+	echo "Checked result rows(Found row/rows)";
+	
 	print_r($id_res);
 	print_r($mail_res);
 	print_r($password_res);
-	echo "Checked result rows(Found row/rows)";
 
 	if (($_POST['logpassword'] === $password_res) && ($_POST['logmail'] === $mail_res)) {
 		echo "Matched!";
