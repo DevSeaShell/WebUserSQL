@@ -38,12 +38,12 @@ if ($stmt -> num_rows > 0){
 	$stmt -> bind_result($id_res, $mail_res, $password_res);
 	$stmt -> fetch();
 	echo "Checked result rows(Found row/rows)";
-	
+
 	print_r($id_res);
 	print_r($mail_res);
 	print_r($password_res);
 
-	if (($_POST['logpassword'] === $password_res) && ($_POST['logmail'] === $mail_res)) {
+	if (($password === $stmt[$password_res]) && ($mail === $stmt[$mail_res])) {
 		echo "Matched!";
 		$_SESSION['username'] = [$username];
 		$_SESSION['mail'] = [$mail];
