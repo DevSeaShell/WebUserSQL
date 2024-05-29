@@ -45,7 +45,7 @@ if ($stmt -> num_rows > 0){
 		$_SESSION['mail'] = [$mail];
 		$_SESSION['id'] = [$id];
 		
-		header('Location: ../Pages/home.html');
+		header('Location: ../Pages/home.php');
 
 	} else {
 		echo "Not Matched..";

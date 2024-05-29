@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +14,11 @@
     <h1>Welcome! You are logged in!</h1>
 
     <div id = HeaderPages>
-        <a href = "home.html"> Home</a>
-        <a href = "home.html"> Profile</a>
-        <a href = "home.html"> Content</a>
-        <a href = "home.html"> About us</a>
-        <a href = "home.html"> Fun games</a>
+        <a href = "home.php"> Home</a>
+        <a href = "home.php"> Profile</a>
+        <a href = "home.php"> Content</a>
+        <a href = "home.php"> About us</a>
+        <a href = "home.php"> Fun games</a>
     </div>
 </body>
 </html>
