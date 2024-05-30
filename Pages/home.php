@@ -15,7 +15,7 @@ if (!isset($_SESSION['id'])){
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome! <?=htmlspecialchars($_SESSION['username']);?> You are logged in!</h1>
+    <h1>Welcome! <?php htmlspecialchars($_SESSION['username']);?> You are logged in!</h1>
 
     <div id = HeaderPages>
         <a href = "home.php"> Home</a>
