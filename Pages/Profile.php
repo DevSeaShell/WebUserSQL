@@ -6,6 +6,6 @@
     <title>Profile</title>
 </head>
 <body>
-    
+    <h1> Your Profile <?php htmlspecialchars($_SESSION['user_username'], ENT_QUOTES)?> </h1>
 </body>
 </html>
