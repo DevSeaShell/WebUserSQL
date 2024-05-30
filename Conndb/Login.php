@@ -40,6 +40,7 @@ echo "RESULTS!!";
 if ($stmt -> num_rows > 0){
 	$stmt -> bind_result($id_res, $mail_res, $password_res);
 	$stmt -> fetch();
+	$stmt -> close();
 	echo "Checked result rows(Found row/rows)";
 
 	if ($password === $password_res && $mail === $mail_res) {

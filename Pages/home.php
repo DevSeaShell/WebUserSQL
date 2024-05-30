@@ -15,11 +15,11 @@ if (!isset($_SESSION['id'])){
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome! <?php echo $_SESSION['user_username'];?> You are logged in!</h1>
+    <h1>Welcome! <?php htmlspecialchars($_SESSION['user_username'], ENT_QUOTES);?> You are logged in!</h1>
 
     <div id = HeaderPages>
         <a href = "home.php"> Home</a>
-        <a href = "home.php"> Profile</a>
+        <a href = "Profile.php"> Profile</a>
         <a href = "home.php"> Content</a>
         <a href = "home.php"> About us</a>
         <a href = "home.php"> Fun games</a>
