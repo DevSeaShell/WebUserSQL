@@ -12,4 +12,23 @@ body{
     max-width: 300px;
     background-color: burlywood;
     padding-block: 20px;
+    margin-top: 6cm;
+    text-align: center;
+}
+
+#logmailcss{
+    padding-right: 26px;
+}
+
+#logpasswordcss{
+    padding-right: 3px;
+}
+
+#LoginSub{
+    text-align: center;
+    margin-top: 8px;
+}
+
+#logtitle{
+    text-align: center;
 }
