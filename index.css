@@ -6,3 +6,10 @@ body{
     font-size: 20%;
     background-color: aquamarine;
 }
+
+#LoForm{
+    margin: auto;
+    max-width: 300px;
+    background-color: burlywood;
+    padding-block: 20px;
+}
