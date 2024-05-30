@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_username'])){
+    header("Location: ./Conndb/Login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
