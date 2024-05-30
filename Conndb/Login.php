@@ -47,7 +47,7 @@ if ($stmt -> num_rows > 0){
 		echo "Matched!";
 		session_regenerate_id();
 		$_SESSION['user_username'] = [$username];
-		$_SESSION['user_id'] = [$id];
+		$_SESSION['user_id'] = [$id_res];
 		
 		header('Location: ../Pages/home.php');
 
