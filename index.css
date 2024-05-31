@@ -3,8 +3,18 @@ body{
 }
 
 #HeaderPages{
-    font-size: 20%;
-    background-color: aquamarine;
+    background-color: bisque;
+}
+#HeaderPages a{
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    padding-right: 15px;
+    color: black;
+}
+#HeaderPages a:hover{
+    background-color: white;
+    color: black;
 }
 /*Login Form*/
 #LoForm{
@@ -32,7 +42,7 @@ body{
 #logtitle{
     text-align: center;
 }
-/*Login Form*/
+/*Register Form*/
 #reForm{
     margin: auto;
     max-width: 300px;
@@ -52,4 +62,12 @@ body{
 
 #RegisterSub{
     margin-top: 8px;
+}
+/*Front page*/
+#indexform{
+    text-align: center;
+}
+
+#LogBut{
+    
 }
