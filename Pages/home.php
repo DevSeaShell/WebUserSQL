@@ -1,10 +1,4 @@
-<?php // Sørger for at brukeren må være logget in.
-session_start();
-if (!isset($_SESSION['id'])){
-    header('Location: ./Conndb/Login.html');
-    exit;
-}
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">

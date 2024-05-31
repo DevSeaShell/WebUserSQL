@@ -49,7 +49,7 @@ if ($stmt -> num_rows > 0){
 		$_SESSION['user_username'] = [$username];
 		$_SESSION['user_id'] = [$id_res];
 		
-		header('Location: home.php');
+		header('Location: ./Pages/home.php');
 
 	} else {
 		echo "Not Matched..";
