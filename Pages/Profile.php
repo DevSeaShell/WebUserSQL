@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id'])){
     <title>Profile</title>
 </head>
 <body>
-    <h1> Your Profile <?=htmlspecialchars($_SESSION['user_username'], ENT_QUOTES)?></h1>
+    <h1> Your Profile <?php echo($_SESSION['user_username'])?></h1>
     <div id = HeaderPages>
         <a href = "home.php"> Home</a>
         <a href = "Profile.php"> Profile</a>
