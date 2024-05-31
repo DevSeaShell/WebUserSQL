@@ -2,6 +2,7 @@
 session_start();
 if (!isset($_SESSION['user_id'])){
     header('Location: ../index.html');
+    exit;
 }
 ?>
 
@@ -14,7 +15,7 @@ if (!isset($_SESSION['user_id'])){
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome! <?php echo ($_SESSION['user_username']);?> You are logged in!</h1>
+    <h1>Welcome! <?php print_r($_SESSION['user_username']);?> You are logged in!</h1>
 
     <div id = HeaderPages>
         <a href = "home.php"> Home</a>
