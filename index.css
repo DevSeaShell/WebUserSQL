@@ -6,7 +6,7 @@ body{
     font-size: 20%;
     background-color: aquamarine;
 }
-
+/*Login Form*/
 #LoForm{
     margin: auto;
     max-width: 300px;
@@ -31,4 +31,25 @@ body{
 
 #logtitle{
     text-align: center;
+}
+/*Login Form*/
+#reForm{
+    margin: auto;
+    max-width: 300px;
+    background-color: burlywood;
+    padding-block: 20px;
+    margin-top: 6cm;
+    text-align: center;
+}
+
+#regmailcss{
+    padding-right: 26px;
+}
+
+#regpasswordcss{
+    padding-right: 3px;
+}
+
+#RegisterSub{
+    margin-top: 8px;
 }

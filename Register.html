@@ -7,20 +7,23 @@
     <title>Register</title>
 </head>
 <body>
-    <h1>Register</h1>
-<br>
 <form id = "reForm" method = "post" action = "Conndb/Register.php">
-    <label>Username:</label>
+    <h1 id="regtitle">Register</h1>
+    <label for="username">Username:</label>
     <input type="mail" name="regusername" required>
-    <label>Email:</label>
+    <br>
+    <br>
+    <label for="email" id="regmailcss">Email:</label>
     <input type="text" name="regmail" required>
-    <label>Password:</label>
+    <br>
+    <br>
+    <label for="password" id="regpasswordcss">Password:</label>
     <input type="password" name="regpassword" required>
 
-    <button type = "submit">Register</button>
-    <br>
-    <p> By Regestering your user, you agree to us saving your information. This will be used to </p>
+    <button type = "submit" id="RegisterSub">Register</button>
 </form>
     
+<br>
+<p> By Regestering your user, you agree to us saving your information. This will be used to </p>
 </body>
 </html>
