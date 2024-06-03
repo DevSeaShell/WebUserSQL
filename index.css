@@ -63,11 +63,38 @@ body{
 #RegisterSub{
     margin-top: 8px;
 }
+#RegText{
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    max-width: 800px;
+}
 /*Front page*/
 #indexform{
     text-align: center;
 }
 
 #LogBut{
-    
+    background-color: burlywood;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#RegBut{
+    background-color: burlywood;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
