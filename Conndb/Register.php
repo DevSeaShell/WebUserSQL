@@ -33,6 +33,9 @@ if (mysqli_num_rows($result_u) >= 1){
 } else if (mysqli_num_rows($result_m) >= 1){
 
 	echo "Mail already in use";
+} else if isset($_POST['Regcheckbox']){
+
+	echo "Need to check the Checkbox";
 } else {
 	// Inserts user info if username and mail doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
