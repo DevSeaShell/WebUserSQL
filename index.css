@@ -19,7 +19,7 @@ body{
 /*Login Form*/
 #LoForm{
     margin: auto;
-    max-width: 300px;
+    max-width: 400px;
     background-color: burlywood;
     padding-block: 20px;
     margin-top: 6cm;
@@ -36,7 +36,7 @@ body{
 
 #LoginSub{
     text-align: center;
-    margin-top: 8px;
+    margin-top: 15px;
 }
 
 #logtitle{
@@ -45,7 +45,7 @@ body{
 /*Register Form*/
 #reForm{
     margin: auto;
-    max-width: 300px;
+    max-width: 400px;
     background-color: burlywood;
     padding-block: 20px;
     margin-top: 6cm;
@@ -74,6 +74,7 @@ body{
 #TermsText{
     color: black;
 }
+
 /*Front page*/
 #indexform{
     text-align: center;
