@@ -36,7 +36,6 @@ if (mysqli_num_rows($result_u) >= 1){
 } else if (isset($_POST['Regcheckbox'])){
 
 	echo "Checked!";
-
 	// Inserts user info if username and mail doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
 	// Checks if SQL query executed successfully and executes the SQL query on the database
@@ -47,6 +46,11 @@ if (mysqli_num_rows($result_u) >= 1){
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
+  // Says that an error has occurred ^
+  // ($sql) SQL query that was attempted to be executed
+  // the MySQLi connection object ($conn) holds the error message
+} else {
+ echo "Not Checked! D:";
 } // Says that an error has occurred ^
   // ($sql) SQL query that was attempted to be executed
   // the MySQLi connection object ($conn) holds the error message
