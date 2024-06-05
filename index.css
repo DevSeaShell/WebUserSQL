@@ -24,6 +24,7 @@ body{
     padding-block: 20px;
     margin-top: 6cm;
     text-align: center;
+    border-radius: 30px;
 }
 
 #logmailcss{
@@ -35,8 +36,7 @@ body{
 }
 
 #LoginSub{
-    text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 #logtitle{
@@ -74,7 +74,14 @@ body{
 #TermsText{
     color: black;
 }
-
+/*terms of service page*/
+#TermForm{
+    margin: auto;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+}
 /*Front page*/
 #indexform{
     text-align: center;
