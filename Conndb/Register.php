@@ -33,7 +33,7 @@ if (mysqli_num_rows($result_u) >= 1){
 } else if (mysqli_num_rows($result_m) >= 1){
 
 	echo "Mail already in use";
-} else if isset($_POST['Regcheckbox']){
+} else if (isset($_POST['Regcheckbox'])){
 
 	echo "Need to check the Checkbox";
 } else {
