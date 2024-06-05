@@ -37,7 +37,6 @@ if (mysqli_num_rows($result_u) >= 1){
 
 	echo "Checked!";
 
-	if {
 	// Inserts user info if username and mail doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
 	// Checks if SQL query executed successfully and executes the SQL query on the database
@@ -47,7 +46,6 @@ if (mysqli_num_rows($result_u) >= 1){
 		header('Location: /Login.html');
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
-	}
 	}
 } // Says that an error has occurred ^
   // ($sql) SQL query that was attempted to be executed
