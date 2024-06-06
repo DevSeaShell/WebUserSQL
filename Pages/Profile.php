@@ -19,7 +19,7 @@ if (!isset($_SESSION['user_id'])){
     <div id = HeaderPages>
         <a href = "home.php"> Home</a>
         <a href = "Profile.php"> Profile</a>
-        <a href = "home.php"> Content</a>
+        <a href = "content.php"> Content</a>
         <a href = "home.php"> About us</a>
         <a href = "home.php"> Fun games</a>
         <a id="logout" href="../Conndb/Logout.php">Logout</a>
