@@ -74,6 +74,7 @@ body{
 #TermsText{
     color: black;
 }
+
 /*terms of service page*/
 #TermForm{
     margin: auto;
@@ -121,4 +122,11 @@ body{
 /*Your profile page*/
 #logout{
     margin-left: 35cm;
+}
+/*Both Registration and login page*/
+#Backmp{
+    text-decoration: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
