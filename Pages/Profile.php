@@ -24,6 +24,5 @@ if (!isset($_SESSION['user_id'])){
         <a href = "home.php"> Fun games</a>
         <a id="logout" href="../Conndb/Logout.php">Logout</a>
     </div>
-    <p>Logout</p>
 </body>
 </html>
