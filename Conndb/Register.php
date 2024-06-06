@@ -39,6 +39,8 @@ if (mysqli_num_rows($result_u) >= 1){
 
 	$password_hashed = password_hash($password, PASSWORD_BCRYPT);
 
+	echo"Hashed password";
+	
 	// Inserts user info if username and mail doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password_hashed')";
 	// Checks if SQL query executed successfully and executes the SQL query on the database
