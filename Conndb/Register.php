@@ -37,12 +37,12 @@ if (mysqli_num_rows($result_u) >= 1){
 
 	echo "Checked!";
 	// Hashes Password, function password_hased
-	$password_hashed = password_hash($password, PASSWORD_BCRYPT);
+	$passwordhashed = password_hash($password, PASSWORD_BCRYPT);
 
 	echo"Hashed password";
 
 	// Inserts user info if username and mail doesn't exist.
-	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password_hashed')";
+	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$passwordhashed')";
 	
 	// if SQL query executed successfully -> executes the SQL query on the database
 	if ($conn->query($sql) === TRUE) {
