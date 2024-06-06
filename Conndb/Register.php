@@ -36,8 +36,11 @@ if (mysqli_num_rows($result_u) >= 1){
 } else if (isset($_POST['Regcheckbox'])){
 
 	echo "Checked!";
+
+	$password_hashed = password_hash($password, PASSWORD_BCRYPT);
+
 	// Inserts user info if username and mail doesn't exist     To hide/hash the password in that database use '.md5($password).' instead of only '$password'
-	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password')";
+	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$password_hashed')";
 	// Checks if SQL query executed successfully and executes the SQL query on the database
 	// query is a request for data or information from a database
 	if ($conn->query($sql) === TRUE) {
