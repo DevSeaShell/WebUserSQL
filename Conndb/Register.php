@@ -40,6 +40,7 @@ if (mysqli_num_rows($result_u) >= 1){
 	$passwordhashed = password_hash($password, PASSWORD_BCRYPT);
 
 	echo"Hashed password";
+	print_r($passwordhashed);
 
 	// Inserts user info if username and mail doesn't exist.
 	$sql = "INSERT INTO users (mail, username, password) VALUES ('$mail', '$username', '$passwordhashed')";
