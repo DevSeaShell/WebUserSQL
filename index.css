@@ -11,6 +11,7 @@ body{
     text-decoration: none;
     padding-right: 15px;
     color: black;
+    margin: auto;
 }
 #HeaderPages a:hover{
     background-color: white;
