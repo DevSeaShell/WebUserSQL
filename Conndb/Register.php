@@ -26,14 +26,13 @@ $sql_m = "SELECT * FROM users WHERE mail = '$mail'";
 $result_u = $conn -> query($sql_u);
 $result_m = $conn -> query($sql_m);
 
-if (mysqli_num_rows($result_u) >= 1){
+if (mysqli_num_rows($result_u) > 0){
+	echo"Username taken";
 
-	echo "Username taken";
+} else if (mysqli_num_rows($result_m) > 0){
+	echo"Mail already in use";
+} else if (isset($_POST['$Regcheckbox'])){
 
-} else if (mysqli_num_rows($result_m) >= 1){
-
-	echo "Mail already in use";
-} else if (isset($_POST['Regcheckbox'])){
 
 	echo "Checked!";
 	// Hashes Password, function password_hased
