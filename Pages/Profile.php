@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])){
         <span><a id="logout" href="../Conndb/Logout.php">Logout</a></span>
     </div>
 
-    <from id = "ReNaForm" method = "post" action = "../Conndb/change.php">
+    <form id = "ReNaForm" method = "post" action = "../Conndb/change.php">
         <h1>Change your Username here</h1>
         <label for="username">New Username:</label>
         <input type="text" name="newusername" required>
