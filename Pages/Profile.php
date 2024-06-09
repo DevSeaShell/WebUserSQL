@@ -28,6 +28,8 @@ if (!isset($_SESSION['user_id'])){
     <h1>Change your Username here</h1>
     <label for="username">New Username:</label>
     <input type="text" name="newusername" required>
+    <br>
+    <button type="submit" id="SubNewuserN">Submit</button>
     </form>
 </body>
 </html>
