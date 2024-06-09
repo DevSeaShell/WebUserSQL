@@ -15,16 +15,23 @@ if ($conn->connect_error)
 }
 echo "Connected!";
 
-
 $username = $conn->real_escape_string($_POST['newusername']);
 
-$sql = "UPDATE users SET username = '$username' WHERE username = ($_SESSION['user_username'])";
+$sql = "SELECT * FROM users WHERE username = '$username'";
+$result_u = $conn -> query($sql);
 
-if ($conn -> query($sql)) === TRUE{
-    echo"Successfully Updated";
+if (mysqli_num_rows($result_u) > 0){
+    echo"Username Taken";
+
 } else {
-    echo"Failed to Update";
-}
 
+    $sql = "UPDATE users SET username = '$username' WHERE username = $_SESSION['user_username']";
+
+    if ($conn -> query($sql)) === TRUE{
+        echo"Successfully Updated";
+    } else {
+        echo"Failed to Update";
+    }
+}
 $conn -> close();
 ?>
