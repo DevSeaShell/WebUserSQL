@@ -29,9 +29,9 @@ if (mysqli_num_rows($result_u) > 0){
 
 } else {
 
-    $sql = "UPDATE users SET username = '$username' WHERE username = $CurrentUsername";
+    $sql_new = "UPDATE users SET username = '$username' WHERE username = $CurrentUsername";
 
-    if ($conn -> query($sql)) === TRUE{
+    if ($conn -> query($sql_new)) === TRUE{
         echo"Successfully Updated";
     } else {
         echo"Failed to Update";
