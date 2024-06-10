@@ -36,6 +36,7 @@ if (mysqli_num_rows($result_u) > 0){
 
     if ($conn -> query($sql_new) === TRUE){
         echo"Successfully Updated <br>";
+		$_SESSION['user_username'] = $username;
 		header("Location: ../Pages/Profile.php");
 
     } else {
