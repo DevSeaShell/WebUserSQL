@@ -1,5 +1,5 @@
 <?php
-echo"IM HERE";
+echo"IM HERE<br>";
 session_start();
 $dbServername = "localhost";
 $dbUsername = "root";
@@ -14,34 +14,34 @@ if ($conn->connect_error)
 {
 	die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected!";
+echo "Connected! <br>";
 
 $CurrentUsername = $_SESSION['user_username'];
 $username = $conn->real_escape_string($_POST['newusername']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
-echo"Database results";
+echo"Database results <br>";
 
-printf("%s",$CurrentUsername);
+printf("%c",$CurrentUsername. "<br>");
 
 if (mysqli_num_rows($result_u) > 0){
-    echo"Username Taken";
+    echo"Username Taken<br>";
 
 } else {
 
-    print_r($username);
-    echo"Give me some place bro";
-    print_r($CurrentUsername);
+    print_r($username. "<br>");
+    echo"Give me some place bro <br>";
+    print_r($CurrentUsername. "<br>");
     $sql_new = "UPDATE users SET username = '$username' WHERE username = '$CurrentUsername'";
 
     if ($conn -> query($sql_new) === TRUE){
-        echo"Successfully Updated";
+        echo"Successfully Updated <br>";
     } else {
-        echo"Failed to Update";
+        echo"Failed to Update<br>";
     }
 }
 $conn -> close();
 
-echo"EYY!";
+echo"EYY! <br>";
 ?>
