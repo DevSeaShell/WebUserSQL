@@ -23,7 +23,7 @@ $sql = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
 echo"Database results <br>";
 
-//printf("%c".$CurrentUsername. "<br>");
+//printf("%c".$CurrentUsername. "<br>");    
 
 if (mysqli_num_rows($result_u) > 0){
     echo"Username Taken<br>";
@@ -33,7 +33,7 @@ if (mysqli_num_rows($result_u) > 0){
     print_r($username. "<br>");
     echo"Give me some place bro <br>";
     print_r($CurrentUsername. "<br>");
-    $sql_new = "UPDATE users SET username = '$username' WHERE username = '$CurrentUsername'";
+    $sql_new = "UPDATE users SET username = '$username' WHERE username like '$CurrentUsername'";
 
     if ($conn -> query($sql_new) === TRUE){
         echo"Successfully Updated <br>";
