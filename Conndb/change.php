@@ -21,7 +21,7 @@ $username = $conn->real_escape_string($_POST['newusername']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
-echo"Database results <br>";
+echo"Database results <br>".$CurrentUsername;
 
 //printf("%c".$CurrentUsername. "<br>");    
 
@@ -31,7 +31,6 @@ if (mysqli_num_rows($result_u) > 0){
 } else {
 
     print_r($username. "<br>");
-    echo"Give me some place bro <br>";
     print_r($CurrentUsername. "<br>");
     $sql_new = "UPDATE users SET username = '$username' WHERE username like '$CurrentUsername'";
 
