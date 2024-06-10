@@ -17,7 +17,6 @@ if ($conn->connect_error)
 echo "Connected!";
 
 $CurrentUsername = $_SESSION['user_username'];
-
 $username = $conn->real_escape_string($_POST['newusername']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
@@ -31,7 +30,7 @@ if (mysqli_num_rows($result_u) > 0){
 
     $sql_new = "UPDATE users SET username = '$username' WHERE username = '$CurrentUsername'";
 
-    if ($conn -> query($sql_new)) === TRUE{
+    if ($conn -> query($sql_new) === TRUE){
         echo"Successfully Updated";
     } else {
         echo"Failed to Update";
