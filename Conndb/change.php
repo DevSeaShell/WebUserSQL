@@ -28,6 +28,7 @@ if (mysqli_num_rows($result_u) > 0){
 
 } else {
 
+    print_r($username);
     $sql_new = "UPDATE users SET username = '$username' WHERE username = '$CurrentUsername'";
 
     if ($conn -> query($sql_new) === TRUE){
