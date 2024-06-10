@@ -16,13 +16,13 @@ if ($conn->connect_error)
 }
 echo "Connected!";
 
-//$CurrentUsername = $_SESSION['user_username'];
+$CurrentUsername = $_SESSION['user_username'];
 
-//$username = $conn->real_escape_string($_POST['newusername']);
+$username = $conn->real_escape_string($_POST['newusername']);
 
-//$sql = "SELECT * FROM users WHERE username = '$username'";
-//$result_u = $conn -> query($sql);
-//echo"Database results";
+$sql = "SELECT * FROM users WHERE username = '$username'";
+$result_u = $conn -> query($sql);
+echo"Database results";
 
 //if (mysqli_num_rows($result_u) > 0){
     //echo"Username Taken";
