@@ -21,28 +21,22 @@ $username = $conn->real_escape_string($_POST['newusername']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
-echo"Database results <br>".$CurrentUsername;
-
-//printf("%c".$CurrentUsername. "<br>");    
 
 if (mysqli_num_rows($result_u) > 0){
-    echo"Username Taken<br>";
-
+    echo"Username Taken";
 } else {
 
-    print_r($username. "<br>");
-    print_r($CurrentUsername. "<br>");
     $sql_new = "UPDATE users SET username = '$username' WHERE username like '$CurrentUsername'";
 
     if ($conn -> query($sql_new) === TRUE){
-        echo"Successfully Updated <br>";
-		$_SESSION['user_username'] = $username;
-		header("Location: ../Pages/Profile.php");
-
+        echo"Successfully Updated!";
+        $_SESSION['user_username'] = $username;
+        header("Location: ../Pages/Profile.php");
     } else {
-        echo"Failed to Update<br>";
+        echo"Failed to update";
     }
 }
+
 $conn -> close();
 
 echo"EYY! <br>";
