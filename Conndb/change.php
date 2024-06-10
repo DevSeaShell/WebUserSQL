@@ -1,5 +1,6 @@
 <?php
-
+echo"IM HERE";
+session_start();
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "My1BirbSQL";
