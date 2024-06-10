@@ -36,7 +36,7 @@ if (mysqli_num_rows($result_u) > 0){
 
     if ($conn -> query($sql_new) === TRUE){
         echo"Successfully Updated <br>";
-		header('Location: ../Pages/Profile.php');
+		header("Location: ./Pages/Profile.php");
 
     } else {
         echo"Failed to Update<br>";
