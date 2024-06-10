@@ -16,7 +16,7 @@ if ($conn->connect_error)
 }
 echo "Connected!";
 
-$CurrentUsername = $_SESSION['user_username'];
+//$CurrentUsername = $_SESSION['user_username'];
 
 $username = $conn->real_escape_string($_POST['newusername']);
 
