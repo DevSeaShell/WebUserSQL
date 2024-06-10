@@ -23,12 +23,13 @@ $sql = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
 echo"Database results";
 
+printf("%s",$CurrentUsername);
+
 if (mysqli_num_rows($result_u) > 0){
     echo"Username Taken";
 
 } else {
 
-    printf($CurrentUsername);
     print_r($username);
     print_r($CurrentUsername);
     $sql_new = "UPDATE users SET username = '$username' WHERE username = '$CurrentUsername'";
