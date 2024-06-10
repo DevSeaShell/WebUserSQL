@@ -23,7 +23,7 @@ $sql = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
 echo"Database results <br>";
 
-printf("%c",$CurrentUsername. "<br>");
+printf("%c".$CurrentUsername. "<br>");
 
 if (mysqli_num_rows($result_u) > 0){
     echo"Username Taken<br>";
