@@ -46,8 +46,8 @@ if ($stmt -> num_rows > 0){
 	if (password_verify($password, $password_res) && $mail === $mail_res) {
 		echo "Matched!";
 		session_regenerate_id();
-		$_SESSION['user_username'] = [$username];
-		$_SESSION['user_id'] = [$id_res];
+		$_SESSION['user_username'] = $username;
+		$_SESSION['user_id'] = $id_res;
 		
 		header('Location: ../Pages/home.php');
 
