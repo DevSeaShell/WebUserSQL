@@ -22,11 +22,12 @@ $username = $conn->real_escape_string($_POST['newusername']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
+echo"Database results";
 
-if (mysqli_num_rows($result_u) > 0){
+//if (mysqli_num_rows($result_u) > 0){
     echo"Username Taken";
 
-} else {
+//} else {
 
     $sql = "UPDATE users SET username = '$username' WHERE username = $CurrentUsername";
 
@@ -35,7 +36,7 @@ if (mysqli_num_rows($result_u) > 0){
     } else {
         echo"Failed to Update";
     }
-}
+//}
 $conn -> close();
 
 echo"EYY!";
