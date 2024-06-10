@@ -25,15 +25,14 @@ $result_u = $conn -> query($sql);
 if (mysqli_num_rows($result_u) > 0){
     echo"Username Taken";
 } else {
-
-    $sql_new = "UPDATE users SET username = '$username' WHERE username like '$CurrentUsername'";
+    $sql_new = "UPDATE users SET username = '$username' WHERE username = '$CurrentUsername'";
 
     if ($conn -> query($sql_new) === TRUE){
-        echo"Successfully Updated!";
+        echo"Succsessfully Updated";
         $_SESSION['user_username'] = $username;
         header("Location: ../Pages/Profile.php");
     } else {
-        echo"Failed to update";
+        echo"Failed to Update";
     }
 }
 
