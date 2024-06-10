@@ -25,17 +25,17 @@ echo "Connected!";
 //echo"Database results";
 
 //if (mysqli_num_rows($result_u) > 0){
-    echo"Username Taken";
+    //echo"Username Taken";
 
 //} else {
 
-    $sql = "UPDATE users SET username = '$username' WHERE username = $CurrentUsername";
+    //$sql = "UPDATE users SET username = '$username' WHERE username = $CurrentUsername";
 
-    if ($conn -> query($sql)) === TRUE{
-        echo"Successfully Updated";
-    } else {
-        echo"Failed to Update";
-    }
+    //if ($conn -> query($sql)) === TRUE{
+        //echo"Successfully Updated";
+    //} else {
+        //echo"Failed to Update";
+    //}
 //}
 $conn -> close();
 
