@@ -19,13 +19,13 @@ echo "Connected! <br>";
 $CurrentUsername = $_SESSION['user_username'];
 $username = $conn->real_escape_string($_POST['newusername']);
 
-$sql = "SELECT * FROM users WHERE username = '$username'";
+$sql ="SELECT * FROM users WHERE username = '$username'";
 $result_u = $conn -> query($sql);
 
 if (mysqli_num_rows($result_u) > 0){
-    echo"Username Taken";
+    echo"username Taken";
 } else {
-    $sql_new = "UPDATE users SET username = '$usernmae' WHERE username = '$CurrentUsername'";
+    $sql_new = "UPDATE users SET username = '$username' WHERE username = '$CurrentUsername'";
 
     if ($conn -> query($sql_new) === TRUE){
         echo"Succsessfully updated";
