@@ -29,14 +29,12 @@ echo "Database Result";
 //Code above works fine ------------
 
 $sql = "SELECT id, mail, password FROM users WHERE username = ?"
-if ($stmt = $conn -> Prepare($sql)){
+$stmt = $conn -> Prepare($sql)
 $stmt -> bind_param('s', $username);
 $stmt -> execute();
 $stmt -> store_result();
 echo "RESULTS!!";
-}else {
-    echo "Failed to prepare the statement.";
-}
+
 
 // all above works --------
 if ($stmt -> num_rows > 0){
