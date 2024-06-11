@@ -19,7 +19,7 @@ echo "Connected! <br>";
 $CurrentUsername = $_SESSION['user_username'];
 $username = $conn->real_escape_string($_POST['newusername']);
 
-// Update username
+// Update usernamee
 
 $conn -> close();
 
