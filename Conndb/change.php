@@ -30,7 +30,7 @@ if (mysqli_num_rows($result_u) > 0){
 
 	if ($conn -> query($sql_new) === TRUE){
 		$_SESSION['user_username'] = $username;
-		header("Location: ../Pages/Profile.php")
+		header("Location: ../Pages/Profile.php");
 	} else {
 		echo"Not succsessfull";
 	}
