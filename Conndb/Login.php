@@ -28,12 +28,14 @@ $result = $conn -> query($sql_get);
 echo "Database Result";
 //Code above works fine ------------
 
-if ($sql = "SELECT id, mail, password FROM users WHERE username = ?") {
-$stmt = $conn -> Prepare($sql);
+$sql = "SELECT id, mail, password FROM users WHERE username = ?"
+if ($stmt = $conn -> Prepare($sql)){
 $stmt -> bind_param('s', $username);
 $stmt -> execute();
 $stmt -> store_result();
 echo "RESULTS!!";
+}else {
+    echo "Failed to prepare the statement.";
 }
 
 // all above works --------
