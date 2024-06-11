@@ -20,7 +20,7 @@ $CurrentUsername = $_SESSION['user_username'];
 $username = $conn->real_escape_string($_POST['newusername']);
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
-result_u = $conn -> query($sql);
+$result_u = $conn -> query($sql);
 
 if (mysqli_num_rows($result_u) > 0){
     echo"Username Taken";
@@ -29,7 +29,7 @@ if (mysqli_num_rows($result_u) > 0){
 
     if ($conn -> query($sql_new) === TRUE){
         echo"Succsessfully updated";
-        $_SESSION['user_usernmae'] = $username;
+        $_SESSION['user_username'] = $username;
         header("Location: ../Pages/Profile.php");
     } else {
         echo"Failed to update";
